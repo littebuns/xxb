@@ -23,11 +23,9 @@ public enum WeekDay {
 
     public static void main(String[] args) {
         String str = WeekDay.valueOf("Sunday").toString();
-        log.info(str);
-        log.info(WeekDay.valueOf("Friday").name());
-        log.info(WeekDay.Sunday.name());
+
         System.out.println(WeekDay.Sunday.getCode());
-        log.info("code",777);
+
     }
 
 }
