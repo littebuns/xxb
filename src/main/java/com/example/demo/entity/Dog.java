@@ -3,8 +3,8 @@ package com.example.demo.entity;
 import lombok.Data;
 
 @Data
-public class Person {
-    private Integer id;
+public class Dog {
+
     private String name;
-    private String age;
+    private Integer age;
 }
