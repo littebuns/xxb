@@ -1,4 +1,4 @@
-package com.example.demo.base.ExtendDemon;
+package com.example.demo.base.Extends;
 
 //员工
 public class Employee {

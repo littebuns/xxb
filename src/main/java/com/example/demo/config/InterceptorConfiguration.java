@@ -14,6 +14,7 @@ public class InterceptorConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(myInterceptor).addPathPatterns("/**");
+        //去拦截登录接口
+        registry.addInterceptor(myInterceptor).addPathPatterns("/login");
     }
 }
