@@ -1,25 +1,21 @@
 package com.example.demo.Controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import com.example.demo.entity.Greeting;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.sql.DataSource;
+import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class HelloController {
 
-    @Autowired
-    private DataSource dataSource;
+    //java字符串格式化
+    private static final String template = "Hello,%s";
+    private final AtomicLong counter = new AtomicLong();
 
-    //通过@Value注解获取配置文件中的值
-    @Value("${person.name}")
-    private String name;
-
-    @GetMapping("hello")
-    public String hello(){
-//        System.out.println(dataSource);
-        return "Hello world" + name;
+    @GetMapping("/greeting")
+    public Greeting hello(@RequestParam(value = "name", defaultValue = "World") String name ){
+        return new Greeting(counter.incrementAndGet(), String.format(template, name));
     }
 }
