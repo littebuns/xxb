@@ -1,6 +1,7 @@
 package com.example.demo.config;
 
 import com.example.demo.service.HelloService;
+import com.example.demo.service.Impl.HelloServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,6 +17,6 @@ public class MyAppConfig {
     @Bean
     public HelloService helloService1(){
         System.out.println("容器中添加了组件helloService1");
-        return new HelloService();
+        return new HelloServiceImpl();
     }
 }

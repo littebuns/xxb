@@ -1,7 +1,10 @@
 package com.example.demo.service;
 
-import org.springframework.stereotype.Service;
+import com.example.demo.entity.Result;
 
-@Service
-public class HelloService {
+
+public interface HelloService {
+
+    Result patch();
+
 }
