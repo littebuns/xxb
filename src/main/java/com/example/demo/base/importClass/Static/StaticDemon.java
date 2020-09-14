@@ -1,4 +1,4 @@
-package com.example.demo.base.Static;
+package com.example.demo.base.importClass.Static;
 
 /**
  * ①对于变量而言，用static修饰 代表这个是属于类的，多个对象共享这个数据（可以节省内存）

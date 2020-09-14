@@ -1,4 +1,4 @@
-package com.example.demo.base.Extends;
+package com.example.demo.base.importClass.Extends;
 
 
 public class Teacher extends Employee {

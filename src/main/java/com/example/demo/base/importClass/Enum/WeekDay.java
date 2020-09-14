@@ -1,4 +1,4 @@
-package com.example.demo.base.Enum;
+package com.example.demo.base.importClass.Enum;
 
 import lombok.extern.slf4j.Slf4j;
 

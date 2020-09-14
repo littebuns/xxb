@@ -1,4 +1,4 @@
-package com.example.demo.base.Interface;
+package com.example.demo.base.importClass.Interface;
 
 public class MyInterfaceImpl implements MyInterface {
     @Override
