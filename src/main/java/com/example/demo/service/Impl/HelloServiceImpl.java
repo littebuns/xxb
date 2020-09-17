@@ -3,15 +3,9 @@ package com.example.demo.service.Impl;
 import com.alibaba.fastjson.JSONObject;
 import com.example.demo.entity.Result;
 import com.example.demo.service.HelloService;
-import org.apache.http.HttpEntity;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service("helloService")
 public class HelloServiceImpl implements HelloService {

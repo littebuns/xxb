@@ -3,15 +3,22 @@ package com.example.demo.Controller;
 import com.example.demo.entity.Greeting;
 import com.example.demo.entity.Result;
 import com.example.demo.service.HelloService;
+import lombok.Data;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.concurrent.atomic.AtomicLong;
 
+@Data
 @RestController
 public class HelloController {
+
+    private final static Logger log = LoggerFactory.getLogger(HelloController.class);
 
     @Autowired
     private HelloService helloService;
@@ -21,7 +28,11 @@ public class HelloController {
     private final AtomicLong counter = new AtomicLong();
 
     @GetMapping("/greeting")
-    public Greeting hello(@RequestParam(value = "name", defaultValue = "World") String name ){
+    public Greeting hello(@RequestParam(value = "name", defaultValue = "World") String name,
+                          HttpServletRequest request){
+        //另外一种方式获取前端传递的参数
+        request.getParameter("name");
+        log.info(name);
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
     }
 
