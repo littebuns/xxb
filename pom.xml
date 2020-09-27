@@ -20,6 +20,7 @@
     </properties>
 
     <dependencies>
+        <!-- httpclient 的依赖-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
@@ -37,13 +38,21 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.70</version>
         </dependency>
+
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.boot</groupId>-->
 <!--            <artifactId>spring-boot-starter-com.example.demo.utils.jdbc</artifactId>-->
 <!--        </dependency>-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- spring jdbcTemplate 的依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
         <dependency>
@@ -63,11 +72,15 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- lombok 的依赖-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.22</version>
         </dependency>
+
+        <!-- alibaba druid连接池 的依赖-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
@@ -81,12 +94,13 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- junit 依赖 -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
+            <version>4.11</version>
         </dependency>
+
     </dependencies>
 
     <build>

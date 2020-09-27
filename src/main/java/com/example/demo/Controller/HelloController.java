@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Dao.UserDao;
 import com.example.demo.entity.Greeting;
 import com.example.demo.entity.Result;
 import com.example.demo.service.HelloService;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.sql.DataSource;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Data
@@ -22,6 +24,11 @@ public class HelloController {
 
     @Autowired
     private HelloService helloService;
+    @Autowired
+    private DataSource dataSource;
+
+    @Autowired
+    private UserDao userDao;
 
     //java字符串格式化
     private static final String template = "Hello,%s";
@@ -30,9 +37,11 @@ public class HelloController {
     @GetMapping("/greeting")
     public Greeting hello(@RequestParam(value = "name", defaultValue = "World") String name,
                           HttpServletRequest request){
+        System.out.println(dataSource.getClass().getName());
         //另外一种方式获取前端传递的参数
         request.getParameter("name");
         log.info(name);
+        System.out.println(userDao.listAll());
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
     }
 

@@ -8,7 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
 
-@Configuration
+//@Configuration
 @PropertySource("classpath:jdbc.properties")
 public class jdbcConfig {
 

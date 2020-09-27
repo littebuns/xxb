@@ -12,8 +12,8 @@ public class LoginController {
     }
 
     @PostMapping("/test1")
-    public void test1(@RequestBody JSONObject json){
-        System.out.println(json);
+    public void test1(@RequestBody String params){
+        System.out.println(params);
     }
 
     @PostMapping("/test2")
