@@ -1,8 +1,9 @@
-package com.example.demo.test.dao;
+package com.example.demo.dao;
 
 import com.example.demo.Dao.UserDao;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+
 
 public class UserDaoTest {
 

@@ -14,11 +14,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 通过httpClient包来进行发送post请求
+ */
 public class HttpClientPost {
 
     public static void main(String[] args) throws IOException {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost("http://localhost:8081/network/networkRemove");
+        //这里发送的是键值对形式的请求体
         List<NameValuePair> nvps = new ArrayList<>();
         nvps.add(new BasicNameValuePair("params", "{\"region\":\"ceshi\",\"hostname\":\"xxb\"\n" +
                 ",\"userId\":\"admin\"}"));
