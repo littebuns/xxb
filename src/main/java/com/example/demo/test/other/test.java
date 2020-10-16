@@ -3,13 +3,18 @@ package com.example.demo.test.other;
 import com.example.demo.entity.Dog;
 import org.springframework.beans.BeanUtils;
 
-public class test {
+class Test {
 
-    public static void main(String[] args) {
-        String str = "sf,uhu";
-        String[] strings = str.split(",");
-        for (String string : strings) {
-            System.out.println(string);
+    //以可变长度参数列表作为传参
+    private static void test(String...strings){
+        for (String str : strings) {
+            System.out.println(str);
         }
     }
+
+    public static void main(String[] args) {
+        test("a","b");
+        test(new String[]{"a","b"});
+    }
+
 }

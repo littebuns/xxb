@@ -1,4 +1,4 @@
-package com.example.demo.base.SingletonPattern;
+package com.example.demo.base.DesignPattern.SingletonPattern;
 
 public class SingleObject {
 
