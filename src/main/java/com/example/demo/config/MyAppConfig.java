@@ -16,7 +16,7 @@ public class MyAppConfig {
 
     @Bean
     public HelloService helloService1(){
-        System.out.println("容器中添加了组件helloService1");
+        //System.out.println("容器中添加了组件helloService1");
         return new HelloServiceImpl();
     }
 }
