@@ -1,4 +1,4 @@
-package com.example.demo.base.Collection;
+package com.example.demo.base.Collection.ArrayList;
 
 import java.util.ArrayList;
 import java.util.Random;

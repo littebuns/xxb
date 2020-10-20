@@ -13,6 +13,8 @@ class Test {
     }
 
     public static void main(String[] args) {
+        String str = "dsfa?dsf?sfd";
+        str.split("\\?");
         test("a","b");
         test(new String[]{"a","b"});
     }

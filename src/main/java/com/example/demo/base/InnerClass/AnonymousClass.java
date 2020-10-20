@@ -1,5 +1,8 @@
 package com.example.demo.base.InnerClass;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 public class AnonymousClass {
 
     //定义了一个greeting接口
@@ -29,6 +32,8 @@ public class AnonymousClass {
 
     public static void main(String[] args) {
         AnonymousClass test = new AnonymousClass();
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println(df.format(System.currentTimeMillis()));
         test.greeting();
     }
 
