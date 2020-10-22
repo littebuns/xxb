@@ -1,10 +1,15 @@
 package com.example.demo.Controller;
 
 import com.example.demo.entity.Result;
+import com.example.demo.service.ExportExcelService;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletOutputStream;
@@ -15,6 +20,15 @@ import java.net.URLEncoder;
 @RestController
 public class ExportExcelController {
 
+    @Autowired
+    private ExportExcelService exportExcelService;
+
+    /**
+     * 简单的导出一个excel
+     * @param response
+     * @return
+     * @throws IOException
+     */
     @GetMapping(value = "/exportExcel")
     public Result exportExcel(HttpServletResponse response) throws IOException {
         //创建一个excel的文档对象
@@ -41,6 +55,16 @@ public class ExportExcelController {
         wb.write(outputStream);
         outputStream.close();
         return new Result(true, "导出成功");
+    }
+
+
+    /**
+     * 使用多线程导出excel
+     * @return
+     */
+    @GetMapping(value = "/threadExportExcel")
+    public Result threadExportExcel(HttpServletResponse response){
+        return this.exportExcelService.threadExport(response);
     }
 
 }

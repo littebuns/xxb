@@ -13,6 +13,14 @@ class Test {
     }
 
     public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        long endTime = System.currentTimeMillis();
+        System.out.println(endTime - startTime);
         String str = "dsfa?dsf?sfd";
         str.split("\\?");
         test("a","b");
