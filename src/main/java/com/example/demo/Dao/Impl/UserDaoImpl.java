@@ -21,7 +21,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> listAll() {
-        String sql = "select * from user where ";
+        String sql = "select * from user  ";
         Map<String, Object> paramMap = new HashMap<>();
         List<User> list = this.jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(User.class));
         return list;

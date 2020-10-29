@@ -20,10 +20,12 @@ public class VariableThread {
         for (int i = 0; i < 10; i++) {
             list.add(i);
         }
-        for (Integer integer : list) {
+        list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            int finalI = i;
             Future<Integer> submit = pool.submit(() -> {
-                System.out.println("当前线程" + Thread.currentThread().getName() + "输出:" + integer);
-                return integer;
+                System.out.println("当前线程" + Thread.currentThread().getName() + "输出:" + finalI);
+                return finalI;
             });
         }
 
