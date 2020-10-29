@@ -10,4 +10,10 @@ public class User {
     private String name;
 
     private String password;
+
+    private Dog dog;
+
+    public User() {
+        System.out.println("创建了一个User");
+    }
 }

@@ -7,5 +7,11 @@
         <property name="id" value="01"/>
         <property name="name" value="xxb"/>
         <property name="password" value="123"/>
+        <property name="dog" ref="dog"/>
+    </bean>
+
+    <bean id="dog" class="com.example.demo.entity.Dog">
+        <property name="name" value="小钢炮"/>
+        <property name="age" value="1"/>
     </bean>
 </beans>

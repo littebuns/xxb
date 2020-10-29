@@ -1,14 +1,13 @@
 package com.example.demo.ioc;
 
+import com.example.demo.entity.Dog;
 import com.example.demo.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.web.context.support.XmlWebApplicationContext;
 
 
 @RunWith(SpringRunner.class)
@@ -23,5 +22,17 @@ public class iocTest {
     public void ioc(){
         User user = (User) ioc.getBean("user");
         System.out.println(user);
+    }
+
+    //用于测试ref的bean是否为同一个bean
+    @Test
+    public void iocRef(){
+        System.out.println("容器启动完毕");
+        Dog dog = (Dog) ioc.getBean("dog");
+        User user = (User) ioc.getBean("user");
+        User user1 = (User) ioc.getBean("user");
+        System.out.println(user1);
+        System.out.println(dog);
+        System.out.println(dog == user.getDog());
     }
 }
