@@ -16,7 +16,7 @@ public class iocTest {
 
 
     //创建一个Spring的IOC容器实例，然后加载配置文件
-    private ApplicationContext ioc = new ClassPathXmlApplicationContext("bean.xml");
+    private final ApplicationContext ioc = new ClassPathXmlApplicationContext("bean.xml");
 
     @Test
     public void ioc(){
@@ -35,4 +35,19 @@ public class iocTest {
         System.out.println(dog);
         System.out.println(dog == user.getDog());
     }
+
+    @Test
+    public void iocFactory(){
+        User user = (User) ioc.getBean("userFactoryPojo");
+        User user1 = (User) ioc.getBean("userFactoryPojo");
+        System.out.println(user);
+    }
+
+    @Test
+    public void beanTest(){
+        Dog dog1 = new Dog();
+        Dog dog2 = new Dog();
+        System.out.println(dog1 == dog2);
+    }
+
 }

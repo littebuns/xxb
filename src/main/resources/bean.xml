@@ -14,4 +14,8 @@
         <property name="name" value="小钢炮"/>
         <property name="age" value="1"/>
     </bean>
+
+    <bean id="userFactoryPojo" class="com.example.demo.base.DesignPattern.FactoryPattern.UserFactory">
+<!--        <property name="dog" value=""/>-->
+    </bean>
 </beans>
