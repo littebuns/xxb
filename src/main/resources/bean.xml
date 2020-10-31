@@ -10,12 +10,17 @@
         <property name="dog" ref="dog"/>
     </bean>
 
-    <bean id="dog" class="com.example.demo.entity.Dog">
+    <bean id="dog" class="com.example.demo.entity.Dog"
+          init-method="initMethod"  destroy-method="destroyMethod">
         <property name="name" value="小钢炮"/>
         <property name="age" value="1"/>
     </bean>
 
+    <!--spring的FactoryBean-->
     <bean id="userFactoryPojo" class="com.example.demo.base.DesignPattern.FactoryPattern.UserFactory">
 <!--        <property name="dog" value=""/>-->
     </bean>
+
+    <!--spring的后置处理器-->
+    <bean id="beanProcessor" class="com.example.demo.config.BeanProcessor"></bean>
 </beans>
