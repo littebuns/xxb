@@ -19,7 +19,7 @@ import java.util.Map;
  * @PropertySource 指定配置文件
  *
  */
-@PropertySource(value = {"classpath:person.properties"})
+@PropertySource(value = {"classpath:config/person.properties"})
 @Component
 @ConfigurationProperties(prefix = "person")
 @Data

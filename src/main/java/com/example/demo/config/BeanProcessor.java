@@ -12,7 +12,7 @@ public class BeanProcessor implements org.springframework.beans.factory.config.B
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        log.info("初始化前置处理器: " + beanName);
+//        log.info("初始化前置处理器: " + beanName);
         return bean;
     }
 

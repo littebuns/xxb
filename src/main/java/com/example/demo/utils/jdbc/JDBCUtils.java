@@ -19,7 +19,7 @@ public class JDBCUtils {
     static {
         try {
             ClassLoader classLoader = JDBCUtils.class.getClassLoader();
-            InputStream in = classLoader.getResourceAsStream("jdbc.properties");
+            InputStream in = classLoader.getResourceAsStream("config/jdbc.properties");
             Properties pro = new Properties();
             pro.load(in);
             url = pro.getProperty("url");
