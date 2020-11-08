@@ -1,5 +1,7 @@
 package com.example.demo.ioc;
 
+import com.example.demo.Dao.Impl.UserDaoImpl;
+import com.example.demo.Dao.UserDao;
 import com.example.demo.entity.Dog;
 import com.example.demo.entity.User;
 import lombok.extern.slf4j.Slf4j;
@@ -56,9 +58,22 @@ public class iocTest {
         log.info("xml配置的数据：" + dataSource.toString());
     }
 
+    /**
+     * SPEL 和 XML 自动装配测试
+     */
     @Test
     public void SpeLTest(){
         User user = (User) ioc.getBean("userSpeL");
         log.info(user.toString());
     }
+
+    /**
+     * 基于注解添加bean
+     */
+    @Test
+    public void annotationTest(){
+        UserDao userDao = (UserDaoImpl) ioc.getBean("userDaoImpl");
+        log.info(userDao.toString());
+    }
+
 }
