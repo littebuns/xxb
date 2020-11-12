@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 @SpringBootApplication
 @ServletComponentScan
 @ImportResource(locations = {"classpath:bean.xml"})
-//@EnableScheduling
+@EnableScheduling
 public class DemoApplication {
 
     public static void main(String[] args) {

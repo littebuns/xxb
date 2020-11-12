@@ -9,13 +9,13 @@ public class ExampleEntity {
     //构造方法
     private ExampleEntity() {
     }
-    protected ExampleEntity(String str,int i){
-        this.str = str;
-        this.i = i;
-    }
-    public ExampleEntity(String... strings){
-
-    }
+//    protected ExampleEntity(String str,int i){
+//        this.str = str;
+//        this.i = i;
+//    }
+//    public ExampleEntity(String... strings){
+//
+//    }
 
     //方法
     public void print(){

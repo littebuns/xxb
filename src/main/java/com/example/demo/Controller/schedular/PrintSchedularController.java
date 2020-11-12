@@ -23,7 +23,7 @@ public class PrintSchedularController {
      * 年(可选，留空)（Year）	1970~2099	, - * /    四个字符
      */
     @GetMapping("/print")
-    @Scheduled(cron = "0/10 * * * * ?")
+    @Scheduled(cron = "* 30/60 * * * ?")
     private void PrintController(){
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String format = dateFormat.format(System.currentTimeMillis());

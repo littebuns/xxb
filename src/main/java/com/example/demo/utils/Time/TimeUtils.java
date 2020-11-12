@@ -18,26 +18,28 @@ public class TimeUtils {
 
 
     public static String getStartTime(String time, String type) throws Exception {
-        int field = 0;
-        int amount = -6;
+        SimpleDateFormat yearSdf = new SimpleDateFormat(YEAR_FORMAT);
+        SimpleDateFormat daySdf = new SimpleDateFormat(DAY_FORMAT);
+        SimpleDateFormat monSdf = new SimpleDateFormat(MONTH_FORMAT);
+        Calendar calendar = Calendar.getInstance();
+        Date date = daySdf.parse(time);
+        calendar.setTime(date);
         switch (type) {
             case WEEK:
-                field = Calendar.WEEK_OF_YEAR;
+                //往前推六个维度
+                calendar.add(Calendar.WEEK_OF_YEAR, -5);
+                calendar.set(Calendar.DAY_OF_WEEK, 2);
                 break;
             case MONTH:
-                field = Calendar.MONTH;
+                calendar.add(Calendar.MONTH, -5);
+                calendar.set(Calendar.DAY_OF_MONTH, 1);
                 break;
             case YEAR:
-                field = Calendar.YEAR;
+                calendar.add(Calendar.YEAR, -5);
+                calendar.set(Calendar.DAY_OF_YEAR, 1);
                 break;
         }
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
-        Date date = sdf.parse(time);
-        calendar.setTime(date);
-        //往前推六个维度
-        calendar.add(field, -6);
-        return sdf.format(calendar.getTime());
+        return daySdf.format(calendar.getTime());
     }
 
     //根据时间类型,获取两个时间节点之间的列表
@@ -49,14 +51,16 @@ public class TimeUtils {
         if (dateType.equals(YEAR)) {
             Calendar start = Calendar.getInstance();
             Calendar end = Calendar.getInstance();
-            start.setTime(yearSdf.parse(startTime));
-            end.setTime(yearSdf.parse(endTime));
+            start.setTime(daySdf.parse(startTime));
+            end.setTime(daySdf.parse(endTime));
 
             while (start.before(end)) {
                 list.add(yearSdf.format(start.getTime()));
                 start.add(Calendar.YEAR, 1);
             }
-            list.add(yearSdf.format(start.getTime()));
+            if (start.get(Calendar.YEAR) == end.get(Calendar.YEAR)){
+                list.add(yearSdf.format(start.getTime()));
+            }
         } else if (dateType.equals(MONTH)) {
             //获取一个Calendar类
             Calendar start = Calendar.getInstance();
@@ -69,12 +73,18 @@ public class TimeUtils {
                 list.add(monSdf.format(start.getTime()));
                 start.add(Calendar.MONTH, 1);
             }
+            //时间往后挪，防止直接超过endTime
+            if (start.get(Calendar.MONTH) == end.get(Calendar.MONTH)){
+                list.add(monSdf.format(start.getTime()));
+            }
         } else if (dateType.equals(WEEK)) {
             Calendar start = Calendar.getInstance();
             Calendar end = Calendar.getInstance();
             start.setTime(daySdf.parse(startTime));
             end.setTime(daySdf.parse(endTime));
-
+            //改成统计周一到周日
+            end.add(Calendar.DAY_OF_YEAR, -1);
+            start.add(Calendar.DAY_OF_YEAR, -1);
             while (start.before(end)) {
                 String str = "";
                 int i = start.get(Calendar.WEEK_OF_YEAR);
@@ -87,17 +97,26 @@ public class TimeUtils {
                 list.add(yearSdf.format(start.getTime())+str);
                 start.add(Calendar.WEEK_OF_YEAR, 1);
             }
+            if (start.get(Calendar.WEEK_OF_YEAR) == end.get(Calendar.WEEK_OF_YEAR)){
+                String str = "";
+                int i = start.get(Calendar.WEEK_OF_YEAR);
+                if (i>0 && i<10){
+                    str = "0"+String.valueOf(i);
+                } else {
+                    str = String.valueOf(i);
+                }
+                list.add(yearSdf.format(start.getTime())+str);
+            }
         }
         return list;
     }
 
 
     public static void main(String[] args) throws Exception {
-        List<String> dates = TimeUtils.getDates("week", "2020-01-01 16:16:34", "2020-09-02 16:16:34");
-        Calendar instance = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat(DAY_FORMAT);
-        instance.setTime(sdf.parse("2020-01-02 16:16:34"));
-        System.out.println(instance.get(Calendar.WEEK_OF_YEAR));
+
+        String year = TimeUtils.getStartTime("2020-11-03 16:16:34", "s");
+        System.out.println(year);
+        List<String> dates = TimeUtils.getDates("week", "2020-1-06 00:00:00", "2020-1-12 00:00:00");
         System.out.println(dates);
     }
 
