@@ -30,4 +30,6 @@ public class LoginController {
     public void test2(@RequestParam(value = "params") String params){
         System.out.println(params);
     }
+
+
 }
