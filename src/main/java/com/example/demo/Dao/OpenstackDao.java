@@ -14,4 +14,6 @@ public interface OpenstackDao {
      * @return
      */
     List<Map<String, Object>> list(int index, int rows);
+
+    void save();
 }

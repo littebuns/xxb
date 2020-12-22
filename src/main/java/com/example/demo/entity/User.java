@@ -2,10 +2,13 @@ package com.example.demo.entity;
 
 import lombok.Data;
 
+/**
+ * @author HP
+ */
 @Data
 public class User {
 
-    private int id; //用户id
+    private int id;
 
     private String name;
 
@@ -13,7 +16,9 @@ public class User {
 
     private Dog dog;
 
-    public User() {
-        System.out.println("创建了一个User");
-    }
+    /**
+     * 用户状态
+     */
+    private String status;
+
 }
