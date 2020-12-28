@@ -2,29 +2,38 @@ package com.example.demo.base.java.Enum;
 
 import lombok.extern.slf4j.Slf4j;
 
+/** dfs
+ * sdfa
+ * @author HP
+ */
+
 @Slf4j
 public enum WeekDay {
 
-    Sunday(7),
+    /**
+     *
+     */
+    SUNDAY,
 
-    Friday(2),
+    MONDAY,
 
-    Tuesday(3);
+    Tuesday,
 
-    private int code;
+    WEDNESDAY,
 
-    WeekDay(int code){
-        this.code = code;
-    }
+    THURSDAY,
 
-    public int getCode(){
-        return code;
-    }
+    FRIDAY,
+
+    SATURDAY;
+
+
 
     public static void main(String[] args) {
-        String str = WeekDay.valueOf("Sunday").toString();
-
-        System.out.println(WeekDay.Sunday.getCode());
+        if (null != WeekDay.SUNDAY){
+            System.out.println(WeekDay.SUNDAY);
+            System.out.println(WeekDay.SUNDAY.ordinal());
+        }
 
     }
 

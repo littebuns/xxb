@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.demo.entity.User;
@@ -13,38 +14,38 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
-@Component
+
 @Slf4j
 public class test {
 
-    @Autowired
-    private RedisTemplate redisTemplate;
 
     public static void main(String[] args) throws Exception{
-        String str = "[{\"xxb\":\"xxb\"},{\"wx\":\"wx\"}]";
-        ArrayList<JSONObject> list = new ArrayList<>();
-        JSONArray jsonArray = JSONArray.parseArray(str);
-        for (int i = 0; i < jsonArray.size(); i++) {
-            list.add(jsonArray.getJSONObject(i));
-        }
-        for (JSONObject object : list) {
-            System.out.println((Map) object);
-        }
-        System.out.println(list);
 
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("xxb", "xxb");
-        jsonObject.put("1", "1");
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("请输入n个正整数并以,分割");
+//        String str = sc.nextLine();
+//        System.out.println(str);
+//        String[] array1 = str.split(",");
+//        int[] array = new int[array1.length] ;
+//        for (int i = 0; i < array1.length; i++) {
+//            array[i] = (Integer) array1[i].int;
+//        }
+//
+//        String result = "";
+//        for (int i = 0; i < array.length; i++) {
+//            for (int j = 0; j < array.length - 1; j++) {
+//                if (array[j] > array[j+1]){
+//
+//                }
+//            }
+//        }
 
-        String s = jsonObject.toString();
-        System.out.println(s);
+
 
     }
 
-    private void redis(){
-        this.redisTemplate.opsForValue();
-    }
 
 
 }
