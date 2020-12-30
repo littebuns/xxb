@@ -1,6 +1,6 @@
-package com.example.demo.Dao.Impl;
+package com.example.demo.dao.impl;
 
-import com.example.demo.Dao.OpenstackDao;
+import com.example.demo.dao.OpenstackDao;
 import com.example.demo.entity.Dog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;

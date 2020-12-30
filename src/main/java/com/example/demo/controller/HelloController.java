@@ -1,6 +1,6 @@
-package com.example.demo.Controller;
+package com.example.demo.controller;
 
-import com.example.demo.Dao.UserDao;
+import com.example.demo.dao.UserDao;
 import com.example.demo.entity.Greeting;
 import com.example.demo.entity.Result;
 import com.example.demo.service.HelloService;

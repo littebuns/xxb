@@ -1,7 +1,6 @@
-package com.example.demo.service.Impl;
+package com.example.demo.service.impl;
 
-import com.example.demo.Dao.Impl.UserDaoImpl;
-import com.example.demo.Dao.UserDao;
+import com.example.demo.dao.UserDao;
 import com.example.demo.entity.Result;
 import com.example.demo.entity.User;
 import com.example.demo.service.UserService;

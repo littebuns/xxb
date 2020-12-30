@@ -1,4 +1,4 @@
-package com.example.demo.utils.Time;
+package com.example.demo.utils.time;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

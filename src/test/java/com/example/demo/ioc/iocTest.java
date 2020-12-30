@@ -1,7 +1,7 @@
 package com.example.demo.ioc;
 
-import com.example.demo.Dao.Impl.UserDaoImpl;
-import com.example.demo.Dao.UserDao;
+import com.example.demo.dao.impl.UserDaoImpl;
+import com.example.demo.dao.UserDao;
 import com.example.demo.entity.Dog;
 import com.example.demo.entity.User;
 import lombok.extern.slf4j.Slf4j;
