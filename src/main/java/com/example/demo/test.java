@@ -10,7 +10,9 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,26 +24,20 @@ public class test {
 
 
     public static void main(String[] args) throws Exception{
-
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("请输入n个正整数并以,分割");
-//        String str = sc.nextLine();
-//        System.out.println(str);
-//        String[] array1 = str.split(",");
-//        int[] array = new int[array1.length] ;
-//        for (int i = 0; i < array1.length; i++) {
-//            array[i] = (Integer) array1[i].int;
-//        }
-//
-//        String result = "";
-//        for (int i = 0; i < array.length; i++) {
-//            for (int j = 0; j < array.length - 1; j++) {
-//                if (array[j] > array[j+1]){
-//
-//                }
-//            }
-//        }
-
+        String time = "2019-12-29 00:00:00";
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(dateFormat.parse(time));
+        calendar.add(Calendar.DAY_OF_WEEK, -1);
+        calendar.setMinimalDaysInFirstWeek(4);
+        int i = calendar.get(Calendar.DAY_OF_WEEK);
+        int j = calendar.get(Calendar.WEEK_OF_YEAR);
+        int year = calendar.get(Calendar.YEAR);
+        int year1 = calendar.getWeekYear();
+        System.out.println(year1);
+        System.out.println(calendar.getTime());
+        System.out.println(i);
+        System.out.println("第"+ year1 + "年"+ "第" + j + "周");
 
 
     }
