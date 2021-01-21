@@ -121,6 +121,13 @@
             <version>1.1.9</version>
         </dependency>
 
+        <!-- 一个util包 -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.5.7</version>
+        </dependency>
+
     </dependencies>
 
     <build>

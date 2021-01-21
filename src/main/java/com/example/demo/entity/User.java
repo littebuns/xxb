@@ -2,6 +2,8 @@ package com.example.demo.entity;
 
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * @author HP
  */
@@ -14,6 +16,8 @@ public class User implements Comparable<User> {
     private String password;
 
     private Dog dog;
+
+    private Date createAt;
 
     /**
      * 用户状态
@@ -28,7 +32,16 @@ public class User implements Comparable<User> {
 
     }
 
+    public User(String name, String password, Date createAt) {
+        this.name = name;
+        this.password = password;
+        this.createAt = createAt;
+    }
 
+    public User(String name, Date createAt) {
+        this.name = name;
+        this.createAt = createAt;
+    }
 
     @Override
     public int compareTo(User o) {
@@ -44,6 +57,14 @@ public class User implements Comparable<User> {
                 ", dog=" + dog +
                 ", status='" + status + '\'' +
                 '}';
+    }
+
+    public Date getCreateAt() {
+        return createAt;
+    }
+
+    public void setCreateAt(Date createAt) {
+        this.createAt = createAt;
     }
 
     public int getId() {
