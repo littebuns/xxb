@@ -1,7 +1,7 @@
 package com.example.demo.config;
 
-import com.example.demo.interceptor.Interceptor;
-import com.example.demo.interceptor.MyInterceptor;
+import com.example.demo.config.interceptor.Interceptor;
+import com.example.demo.config.interceptor.MyInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

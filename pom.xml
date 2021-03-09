@@ -39,11 +39,6 @@
             <version>1.2.70</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-com.example.demo.utils.jdbc</artifactId>-->
-<!--        </dependency>-->
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -103,7 +98,6 @@
             <version>4.1.2</version>
         </dependency>
 
-
         <!-- springboot的健康检查 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -115,6 +109,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
+
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>

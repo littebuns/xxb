@@ -23,25 +23,37 @@ import java.util.Scanner;
 public class test {
 
 
+    private String str1 = "String域";
+    private String str2;
+
+    public test() {
+        str2 = "构造器初始化";
+    }
+
     public static void main(String[] args) throws Exception{
-        String time = "2019-12-29 00:00:00";
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(dateFormat.parse(time));
-        calendar.add(Calendar.DAY_OF_WEEK, -1);
-        calendar.setMinimalDaysInFirstWeek(4);
-        int i = calendar.get(Calendar.DAY_OF_WEEK);
-        int j = calendar.get(Calendar.WEEK_OF_YEAR);
-        int year = calendar.get(Calendar.YEAR);
-        int year1 = calendar.getWeekYear();
-        System.out.println(year1);
-        System.out.println(calendar.getTime());
-        System.out.println(i);
-        System.out.println("第"+ year1 + "年"+ "第" + j + "周");
+        test test = new test();
+        System.out.println(test.str1);
+        System.out.println(test.str2);
 
 
     }
 
 
+    public static int[] twoSum(int[] nums, int target) {
+        int[] result = new int[2];
+        for(int i = 0 ; i < nums.length; i ++){
+            for(int j = 0 ; j < nums.length; j ++){
+                if (nums[i] == nums[j]){
+                    continue;
+                }
+                if(nums[i] + nums[j] == target){
+                    result[1] = j;
+                    result[0] = i;
+                    return result;
+                }
+            }
+        }
+        return result;
+    }
 
 }
