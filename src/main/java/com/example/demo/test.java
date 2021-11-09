@@ -3,8 +3,10 @@ package com.example.demo;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.JSONPath;
 import com.example.demo.entity.User;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
@@ -54,6 +56,51 @@ public class test {
             }
         }
         return result;
+    }
+
+    @Test
+    public void t1(){
+        String str = "{\n" +
+                "  \"settleOffice\": \" \",\n" +
+                "  \"settleOfficeDept\": \" \",\n" +
+                "  \"dataSource\": \" \",\n" +
+                "  \"sourceOperatingId\": \" \",\n" +
+                "  \"info\": [\n" +
+                "    {\n" +
+                "      \"bkCtnRequest\": [\n" +
+                "        {\n" +
+                "          \"ctnSizeType\": \" \",\n" +
+                "          \"ctnQuantity\": \" \",\n" +
+                "          \"isSoc\": \" \",\n" +
+                "          \"ctnWeight\": \" \"\n" +
+                "        }\n" +
+                "      ],\n" +
+                "      \"bkCargo\": [\n" +
+                "        {\n" +
+                "          \"hazardClass\": \" \",\n" +
+                "          \"unNo\": \" \",\n" +
+                "          \"dangerLabel\": \" \",\n" +
+                "          \"flashPoint\": \" \",\n" +
+                "          \"flashPointUnit\": \" \",\n" +
+                "          \"packagingGroup\": \" \",\n" +
+                "          \"dangerTechnicalDesc\": \" \",\n" +
+                "          \"urgentContract\": \" \",\n" +
+                "          \"urgentContractTel\": \" \",\n" +
+                "          \"airVensSet\": \" \",\n" +
+                "          \"airVentsUnit\": \" \",\n" +
+                "          \"temperature\": \" \",\n" +
+                "          \"temperatureUnit\": \" \"\n" +
+                "        }\n" +
+                "      ]\n" +
+                "    }\n" +
+                "  ]\n" +
+                "}";
+        JSONObject jsonObject = JSON.parseObject(str);
+        for (Map.Entry<String, Object> entry : jsonObject.entrySet()) {
+            System.out.println("key值="+entry.getKey());
+            System.out.println("对应key值的value="+entry.getValue());
+        }
+        System.out.println(jsonObject);
     }
 
 }
