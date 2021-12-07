@@ -1,4 +1,4 @@
-package pers.xxb.java8.Lambda;
+package pers.xxb.java8;
 
 import java.util.Arrays;
 import java.util.Comparator;

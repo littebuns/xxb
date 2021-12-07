@@ -1,10 +1,8 @@
-package pers.xxb.java8.Lambda;
+package pers.xxb.java8.lambda;
 
 import org.junit.Test;
 
 public class lambdaDemon {
-
-    public static boolean salutation;
 
     interface MathOperation{
         int operation(int x,int y);

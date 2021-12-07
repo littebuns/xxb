@@ -1,4 +1,4 @@
-package pers.xxb.java8.Lambda.Stream;
+package pers.xxb.java8.Stream;
 
 import org.junit.Test;
 
