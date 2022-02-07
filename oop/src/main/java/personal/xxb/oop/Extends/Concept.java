@@ -1,4 +1,4 @@
-package pers.xxb.keyword.Extends;
+package personal.xxb.oop.Extends;
 
 /**
  * 面向对象的三大特征：封装，继承，多态   没有继承就没有多态

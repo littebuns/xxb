@@ -1,4 +1,4 @@
-package pers.xxb.keyword.Extends;
+package personal.xxb.oop.Extends;
 
 
 public class Teacher extends Employee {
@@ -8,11 +8,11 @@ public class Teacher extends Employee {
         String str = null;
         str = teacher.method(str);
         System.out.println(str);
-
     }
 
     private String method(String str){
         str += "====";
         return str ;
     }
+
 }

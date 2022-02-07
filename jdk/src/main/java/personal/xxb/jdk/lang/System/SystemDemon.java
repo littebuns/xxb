@@ -1,4 +1,4 @@
-package pers.xxb.keyword.System;
+package personal.xxb.jdk.lang.System;
 
 import java.util.Arrays;
 
@@ -30,4 +30,5 @@ public class SystemDemon {
         long end = System.currentTimeMillis();
         System.out.println("耗时:" + (end-start) + "毫秒");
     }
+
 }

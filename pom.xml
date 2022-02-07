@@ -10,6 +10,7 @@
         <module>generic</module>
         <module>test</module>
         <module>oop</module>
+        <module>jdk</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
