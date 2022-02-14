@@ -1,4 +1,4 @@
-package personal.xxb.generic;
+package personal.xxb.oop.generic;
 
 public class HfsApple extends Apple<String>{
 
