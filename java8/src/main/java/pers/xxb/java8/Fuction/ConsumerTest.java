@@ -14,6 +14,8 @@ public class ConsumerTest {
      */
     @Test
     public void t1(){
+        Consumer<String> consumer = System.out::println;
+        consumer.accept("哈哈哈");
         print("你好", System.out::println);
     }
 
@@ -22,11 +24,7 @@ public class ConsumerTest {
      */
     @Test
     public void t2(){
-        doubleAction("AbdsfS", s -> {
-            System.out.println(s.toUpperCase());
-        }, s -> {
-            System.out.println(s.toLowerCase());
-        });
+        doubleAction("AbdsfS", s -> System.out.println(s.toUpperCase()), s -> System.out.println(s.toLowerCase()));
     }
 
     public static void print(String str, Consumer<String> consumer){
