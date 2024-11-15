@@ -7,6 +7,7 @@
         <module>design</module>
         <module>collection</module>
         <module>oop</module>
+        <module>IO</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -15,7 +16,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>xxb</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>xxb</name>
     <description>Demo project for Spring Boot</description>
