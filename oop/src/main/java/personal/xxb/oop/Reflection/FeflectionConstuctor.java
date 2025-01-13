@@ -1,4 +1,4 @@
-package personal.xxb.oop.keyword.Reflection;
+package personal.xxb.oop.Reflection;
 
 import java.lang.reflect.Constructor;
 

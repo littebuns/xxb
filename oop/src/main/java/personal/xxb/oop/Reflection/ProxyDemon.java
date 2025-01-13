@@ -1,4 +1,4 @@
-package personal.xxb.oop.keyword.Reflection;
+package personal.xxb.oop.Reflection;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

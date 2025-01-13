@@ -8,6 +8,7 @@
         <module>collection</module>
         <module>oop</module>
         <module>IO</module>
+        <module>thread</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
